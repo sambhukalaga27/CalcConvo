@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Chatbot</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header> <img src="SMUlogo.png" alt="University Logo" id="university-logo">
+        <div id="team-info">
+            <div class="team-member">
+                <img src="K S Sambhu.png" alt="Member 1 Photo" class="member-photo">
+                <p>K S Sambhu Prasad<br>49284735</p>
+            </div>
+            <div class="team-member">
+                <img src="member2-photo.png" alt="Member 2 Photo" class="member-photo">
+                <p>Member 2 Name<br>Role</p>
+            </div>
+        </div>
+        <div id="team-number">Team Number: 012</div>
+    </header>
+    <div id="chat-container">
+        <div id="chat-title">CalcConvo</div>
+        <div id="chat-box"></div>
+        <input type="text" id="chat-input" placeholder="Ask a math question...">
+        <button id="send-btn">Send</button>
+    </div>
+    <div id="graph-container">
+        <div id="graph-title">Graph</div>
+        <div id="graph-box"></div>
+    </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
