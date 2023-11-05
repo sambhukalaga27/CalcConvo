@@ -3,6 +3,7 @@ from sympy import symbols, simplify, sqrt, diff, integrate
 import plotly.graph_objs as go
 import plotly
 import json
+import os
 
 app = Flask(__name__)
 
@@ -114,4 +115,5 @@ def generate():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000)) # Use environment variable for port
+    app.run(debug=True, port=port)
