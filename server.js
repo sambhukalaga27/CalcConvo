@@ -9,8 +9,8 @@ const io = new Server(server);
 
 app.use(express.static('.'));
 
-const PORT = process.env.PORT || 3000; // Use environment variable for port
-const PYTHON_SERVER_URL = process.env.PYTHON_SERVER_URL || 'http://localhost:5000'; // Use environment variable for Python server URL
+const PORT = process.env.PORT //|| 3000; // Use environment variable for port
+const PYTHON_SERVER_URL = process.env.PYTHON_SERVER_URL // || 'http://localhost:5000'; // Use environment variable for Python server URL
 
 io.on('connection', (socket) => {
     console.log('a user connected');
