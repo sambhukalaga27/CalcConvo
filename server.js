@@ -9,6 +9,9 @@ const io = new Server(server);
 
 app.use(express.static('.'));
 
+const PORT = process.env.PORT || 3000; // Use environment variable for port
+const PYTHON_SERVER_URL = process.env.PYTHON_SERVER_URL || 'http://localhost:5000'; // Use environment variable for Python server URL
+
 io.on('connection', (socket) => {
     console.log('a user connected');
     
@@ -18,7 +21,7 @@ io.on('connection', (socket) => {
     
     socket.on('message', async (msg) => {
         try {
-            const response = await axios.post('http://localhost:5000/generate', {
+            const response = await axios.post(`${PYTHON_SERVER_URL}/generate`, {
                 prompt: msg
             });
 
@@ -30,6 +33,6 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('listening on *:3000');
+server.listen(PORT, () => {
+    console.log(`listening on *:${PORT}`);
 });
